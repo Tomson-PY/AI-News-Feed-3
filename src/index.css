@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-purple-50/50 text-gray-900;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-xl font-medium transition-all duration-300 shadow-sm hover:shadow-md;
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-to-r from-purple-600 to-purple-700 text-white hover:from-purple-700 hover:to-purple-800 hover:scale-[1.02];
+  }
+  
+  .btn-secondary {
+    @apply bg-purple-100 text-purple-800 hover:bg-purple-200;
+  }
+
+  .header-gradient {
+    @apply bg-gradient-to-r from-purple-900 via-indigo-900 to-purple-900;
+  }
+
+  /* Category-specific tag colors */
+  .tag-AI.News {
+    @apply bg-blue-100 text-blue-800;
+  }
+
+  .tag-Technology {
+    @apply bg-emerald-100 text-emerald-800;
+  }
+
+  .tag-Science {
+    @apply bg-violet-100 text-violet-800;
+  }
+
+  /* Card styling */
+  .news-card {
+    @apply bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 border border-purple-100/50;
+  }
+
+  .news-card-header {
+    @apply p-6 border-b border-purple-100/50;
+  }
+
+  .news-card-footer {
+    @apply px-6 py-4 bg-gradient-to-b from-purple-50/50 to-purple-100/30;
+  }
+
+  /* Tooltip styles */
+  .tooltip {
+    @apply invisible absolute bg-gradient-to-b from-gray-900 to-gray-800 text-white text-sm px-3 py-2 
+           rounded-xl opacity-0 transition-all duration-300 delay-500 z-[100] whitespace-nowrap
+           -translate-x-1/2 left-1/2 shadow-xl;
+    bottom: calc(100% + 0.5rem);
+  }
+
+  .tooltip::after {
+    content: '';
+    @apply absolute w-0 h-0 left-1/2 -translate-x-1/2 border-transparent border-solid;
+    top: 100%;
+    border-width: 6px;
+    border-top-color: theme('colors.gray.800');
+  }
+
+  .tooltip-wrapper {
+    @apply relative isolate;
+  }
+
+  .tooltip-wrapper:hover .tooltip {
+    @apply visible opacity-100;
+  }
+
+  /* Action buttons */
+  .action-button {
+    @apply p-2 rounded-xl transition-all duration-300 hover:scale-105;
+  }
+
+  /* Tag styling */
+  .tag-badge {
+    @apply inline-flex items-center gap-1 px-3 py-1.5 rounded-full text-sm font-medium 
+           shadow-sm transition-all duration-300 hover:scale-105;
+  }
+
+  .tag-badge-default {
+    @apply bg-gradient-to-r from-purple-100 to-purple-200 text-purple-800;
+  }
+
+  /* Section headers */
+  .section-header {
+    @apply bg-gradient-to-r from-white to-purple-50 rounded-2xl shadow-sm p-6 mb-6;
+  }
+}
